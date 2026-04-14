@@ -6,7 +6,8 @@ I run an old mail server that lacks some newer additions such as OAuth2 authenti
 
 ## Solution
 
-Run **Postfix** on the same machine as the mail server. Postfix supports OAuth2 via the **sasl-xoauth2** plugin. For good measure, DKIM signing of outgoing mail is also implemented using **perl-Mail-DKIM**.
+Run **Postfix** on the same machine as the mail server. Postfix supports OAuth2 via the **sasl-xoauth2** plugin.
+DKIM signing of outgoing mail is also implemented using **perl-Mail-DKIM**.
 
 ### Components
 
@@ -20,4 +21,4 @@ Run **Postfix** on the same machine as the mail server. Postfix supports OAuth2 
 
 ## About This Guide
 
-The complete installation is non-trivial. This guide documents the full setup process as a reference for future reinstallation.
+This guide documents the full setup process as a reference for future reinstallation.
