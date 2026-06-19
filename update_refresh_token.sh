@@ -11,6 +11,7 @@ python3 << 'PYEOF'
 import json
 import requests
 import os
+from datetime import datetime
 
 TOKEN_FILES = [
     '/etc/sasl-xoauth2/gmail-token.json',
@@ -44,5 +45,9 @@ for path in TOKEN_FILES:
         json.dump(tok, f, indent=2)
     os.chmod(path, 0o660)
 
-print("Token refreshed successfully")
+print(f"{datetime.now()} Token refreshed successfully")
 PYEOF
+
+chown postfix:postfix /etc/sasl-xoauth2/gmail-token.json
+chown postfix:postfix /etc/tokens/$GMAIL_ACCOUNT
+echo "$(date) Updated refresh token"
